@@ -14,14 +14,18 @@ export default function Gameboard({onSelectSquare, turnsLog}){
         //update gameboard
         gameBoard[row][col]=player;
     }
-    
+
     return (
         <ol id="game-board">
             {gameBoard.map((row,rowIndex)=>(
                 <li key={rowIndex}>
                 <ol>
                     {row.map((symbol,colIndex) => (         
-                        <li key={colIndex}><button onClick={()=>onSelectSquare(rowIndex,colIndex)}>{symbol}</button></li>
+                        <li key={colIndex}><button 
+                        disabled={symbol!==null} 
+                        onClick={()=>onSelectSquare(rowIndex,colIndex)}>
+                        {symbol}
+                        </button></li>
                         ))}
                 </ol>
             </li>
