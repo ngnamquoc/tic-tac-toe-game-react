@@ -1,5 +1,5 @@
 import { useState } from "react";
-export default function Player({initialName,symbol}){
+export default function Player({initialName,symbol,isActive}){
     const [userName, setName]=useState(initialName);
     const [isEditing, setIsEditing]=useState(false);
     function handleEditToggle(){
@@ -22,7 +22,7 @@ export default function Player({initialName,symbol}){
     }
     
     return(
-        <li>
+        <li className={isActive?"active":undefined}>
             <span className="player">
               {playerName}
               <span className="player-symbol">{symbol}</span>

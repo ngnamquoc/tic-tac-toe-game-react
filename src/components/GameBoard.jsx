@@ -5,17 +5,20 @@ const initialGameBoard=[
     [null,null,null],
     [null,null,null]
 ]
-export default function Gameboard(){
+export default function Gameboard({onSelectSquare, activePlayerSymbol}){
     const [gameBoard,setGameBoard]=useState(initialGameBoard);
+    
     function handleSelectSquare(rowIndex,colIndex){
         setGameBoard((preGameBoard)=>{
             //create a copy of previous game board which is a js object
             //the best practice is not mutating js object directly
             const updatedGameBoard=[...preGameBoard.map(innnerArray=>[...innnerArray])];
-            updatedGameBoard[rowIndex][colIndex]='X';
+            updatedGameBoard[rowIndex][colIndex]=activePlayerSymbol;
             return updatedGameBoard;
 
         })
+        //change active user
+        onSelectSquare();
     }
     return (
         <ol id="game-board">

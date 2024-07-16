@@ -73,7 +73,7 @@ h1 {
 
 #players.highlight-player li.active {
   border-color: #f6e35a;
-  animation: pulse 2s infinite ease-in-out;
+  animation: pulse 1s infinite ease-in-out;
 }
 
 #players.highlight-player li.active .player-name,
