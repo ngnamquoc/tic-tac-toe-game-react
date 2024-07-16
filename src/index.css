@@ -1,15 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Roboto+Slab:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Roboto Slab', sans-serif;
-  line-height: 1.5;
-
+  font-family: "Press Start 2P", system-ui;  line-height: 1.5;
   color: #ebe7ef;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -41,8 +37,9 @@ header img {
 }
 
 h1 {
-  font-family: 'Caprasimo', cursive;
-  font-size: 3rem;
+  font-family: "Press Start 2P", system-ui; 
+   line-height: 1.5;
+  font-size: 2rem;
   margin: 0 auto 3rem auto;
   color: #3f3b00;
 }
@@ -153,8 +150,8 @@ ol {
   background: none;
   color: #f8c031;
   border: none;
-  font-family: 'Caprasimo', cursive;
-  font-size: 4rem;
+  font-family: "Press Start 2P", system-ui;
+    font-size: 4rem;
   text-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
   animation: pulse-text-size 2s infinite ease-out;
 }
@@ -186,8 +183,8 @@ ol {
   color: #3f3b00;
   font-size: 5rem;
   cursor: pointer;
-  font-family: 'Caprasimo', cursive;
-  padding: 1rem;
+  font-family: "Press Start 2P", system-ui;
+    padding: 1rem;
 }
 
 #game-over {
@@ -205,8 +202,8 @@ ol {
 }
 
 #game-over h2 {
-  font-family: 'Caprasimo', cursive;
-  font-size: 4rem;
+  font-family: "Press Start 2P", system-ui;
+    font-size: 4rem;
   text-align: center;
   color: #fcd256;
   margin: 0;
@@ -265,8 +262,8 @@ ol {
 }
 
 #game-hints h2 {
-  font-family: 'Caprasimo', cursive;
-  font-size: 2rem;
+  font-family: "Press Start 2P", system-ui;
+    font-size: 2rem;
   margin: 0;
 }
 
