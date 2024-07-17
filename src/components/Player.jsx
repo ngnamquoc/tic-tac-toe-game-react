@@ -1,15 +1,16 @@
 import { useState } from "react";
-export default function Player({initialName,symbol,isActive}){
+export default function Player({initialName,symbol,isActive,updatePlayerName}){
     const [userName, setName]=useState(initialName);
     const [isEditing, setIsEditing]=useState(false);
     function handleEditToggle(){
-        //update state instantly by arrow function
         setIsEditing((editing)=>!editing);
-        // console.log("editing mode" + isEditing);
+        if(isEditing){
+            //only update when user click save
+            updatePlayerName(symbol,userName);
+        }
     }
     function handleChange(event){
-        //apply 2-way-binding concept
-        // console.log(event.target.value);
+        //2-way-binding concept to dymically update username
         setName(event.target.value);
     }
     //default playerName & button title
