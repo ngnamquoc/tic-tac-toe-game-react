@@ -15,7 +15,7 @@ html {
 }
 
 body {
- background-image: url("universe.jpg");
+ background-image: url("./assets/universe.jpg");
   /* background-repeat: repeat; */
   background-size: 100% 100%, 30% 30%, 100% 100%;
   min-height: 100rem;
