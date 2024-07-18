@@ -21,25 +21,12 @@ const initialGameBoard = [
   [null, null, null],
 ];
 
-function App() {
-  const [players, setPlayers]= useState({
-    X:'Player 1',
-    Y:'Player 2'
-  })
-  const [gameTurns, setGameTurn] = useState([]);
+const playerNotation={
+  X:'Player 1',
+  O:'Player 2'
+}
 
-  //identify current active player
-  const activePlayer = identifyActivePlayer(gameTurns);
-  //make a deep copy of initialGameBoard array
-  let gameBoard = [...initialGameBoard.map(innerArray=>[...innerArray])];
-
-  for (const turn of gameTurns) {
-    const { position, player } = turn;
-    const { row, col } = position;
-    //update gameboard
-    gameBoard[row][col] = player;
-  }
-
+function checkWinner(gameBoard){
   let winner = null;
 
   //Dynamically check for winner
@@ -55,6 +42,36 @@ function App() {
       winner = firstCellSymbol;
     }
   }
+  return winner;
+
+}
+
+function deriveGameBoard(gameTurns){
+  //make a deep copy of initialGameBoard array
+  let gameBoard = [...initialGameBoard.map(innerArray=>[...innerArray])];
+
+  for (const turn of gameTurns) {
+    const { position, player } = turn;
+    const { row, col } = position;
+    //update gameboard
+    gameBoard[row][col] = player;
+  }
+  return gameBoard;
+
+}
+
+function App() {
+  const [players, setPlayers]= useState(playerNotation);
+  const [gameTurns, setGameTurn] = useState([]);
+
+  //initial and dynamically update gameboard
+  let gameBoard = deriveGameBoard(gameTurns);
+
+  //identify current active player
+  const activePlayer = identifyActivePlayer(gameTurns);
+  
+  //check for winner
+  let winner = checkWinner(gameBoard);
 
   //check for draw game
   const isDraw = gameTurns.length===9 && !winner;

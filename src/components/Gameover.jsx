@@ -1,13 +1,11 @@
 export default function Gameover({winner, rematch, playerNames}){
-    console.log(
-        winner,playerNames,playerNames[winner]
+    // console.log(playerNames, winner);
 
-    );
     return(
         <div id="game-over">
             <h2>Game Over!</h2>
            
-            {winner && <p>{playerNames[`${winner}`]} won!</p>}
+            {winner && <p>{playerNames[winner]} won!</p>}
             {!winner && <p>It&apos;s a draw!</p>}
 
             <p>
