@@ -124,11 +124,13 @@ function App() {
             updatePlayerName={handleNameChange}
           />
         </ol>
-        {(winner || isDraw) && <Gameover playerNames={players} winner={winner} rematch={handleRematch}/>}
         <Gameboard onSelectSquare={handleSelectSquare} board={gameBoard} />
+        {(winner || isDraw) && <Gameover playerNames={players} winner={winner} rematch={handleRematch}/>}
+
       </div>
 
-      <Log turns={gameTurns} />
+
+      {/* <Log turns={gameTurns} /> */}
     </main>
   );
 }
